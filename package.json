@@ -1,7 +1,7 @@
 {
-  "name": "galio-framework",
+  "name": "jaytech-rn-ui",
   "main": "src/index.js",
-  "version": "0.6.3",
+  "version": "0.0.2",
   "files": [
     "src/"
   ],

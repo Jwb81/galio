@@ -3,7 +3,7 @@ import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 // G A L I O - D E P E N D E N C Y
 import { Text } from './';
-import GalioTheme, { withGalio } from './theme';
+import JaytechTheme, { withStyles } from './theme';
 
 function Radio({
   color,
@@ -134,7 +134,7 @@ Radio.defaultProps = {
   labelStyle: null,
   onChange: () => { },
   styles: {},
-  theme: GalioTheme,
+  theme: JaytechTheme,
 };
 
 Radio.propTypes = {
@@ -155,4 +155,4 @@ Radio.propTypes = {
   theme: PropTypes.any,
 };
 
-export default withGalio(Radio, styles);
+export default withStyles(Radio, styles);

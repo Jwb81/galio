@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // galio components
 import { Block, Text, Icon } from './';
-import GalioTheme, { withGalio } from './theme';
+import JaytechTheme, { withStyles } from './theme';
 
 const { height } = Dimensions.get('screen');
 
@@ -101,7 +101,7 @@ NavBar.defaultProps = {
   rightStyle: null,
   style: null,
   styles: {},
-  theme: GalioTheme,
+  theme: JaytechTheme,
 };
 
 NavBar.propTypes = {
@@ -167,4 +167,4 @@ const styles = theme =>
     },
   });
 
-export default withGalio(NavBar, styles);
+export default withStyles(NavBar, styles);

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from './Icon';
-import GalioTheme, { withGalio } from './theme';
+import JaytechTheme, { withStyles } from './theme';
 
 function Input({
   style,
@@ -124,7 +124,7 @@ Input.defaultProps = {
   styles: {},
   iconSize: null,
   iconContent: null,
-  theme: GalioTheme,
+  theme: JaytechTheme,
   onRef: null,
 };
 
@@ -199,4 +199,4 @@ const styles = theme =>
       borderWidth: 0,
     },
   });
-export default withGalio(Input, styles);
+export default withStyles(Input, styles);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
-import GalioTheme, { withGalio } from './theme';
+import JaytechTheme, { withStyles } from './theme';
 
 function Block({
     row,
@@ -79,7 +79,7 @@ Block.defaultProps = {
   shadowColor: null,
   safe: false,
   styles: {},
-  theme: GalioTheme,
+  theme: JaytechTheme,
 };
 
 Block.propTypes = {
@@ -153,4 +153,4 @@ const styles = theme =>
     },
   });
 
-export default withGalio(Block, styles);
+export default withStyles(Block, styles);

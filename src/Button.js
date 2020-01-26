@@ -3,35 +3,35 @@ import { ActivityIndicator, Dimensions, StyleSheet, TouchableOpacity, Text } fro
 import PropTypes from 'prop-types';
 // galio components
 import { Icon } from './';
-import GalioTheme, { withGalio } from './theme';
+import JaytechTheme, { withStyles } from './theme';
 
 const { width } = Dimensions.get('window');
 
 function Button({
-    color,
-    children,
-    capitalize,
-    disabled,
-    iconSize,
-    icon,
-    iconFamily,
-    iconColor,
-    loading,
-    loadingSize,
-    lowercase,
-    onlyIcon,
-    opacity,
-    round,
-    radius,
-    style,
-    size,
-    shadowless,
-    shadowColor,
-    styles,
-    theme,
-    textStyle,
-    uppercase,
-    ...rest
+  color,
+  children,
+  capitalize,
+  disabled,
+  iconSize,
+  icon,
+  iconFamily,
+  iconColor,
+  loading,
+  loadingSize,
+  lowercase,
+  onlyIcon,
+  opacity,
+  round,
+  radius,
+  style,
+  size,
+  shadowless,
+  shadowColor,
+  styles,
+  theme,
+  textStyle,
+  uppercase,
+  ...rest
 }) {
   function renderContent() {
     const textStyles = [styles.customText, textStyle];
@@ -118,7 +118,7 @@ Button.defaultProps = {
   iconSize: 14,
   iconColor: null,
   styles: {},
-  theme: GalioTheme,
+  theme: JaytechTheme,
 };
 
 Button.propTypes = {
@@ -192,4 +192,4 @@ const styles = theme =>
     },
   });
 
-export default withGalio(Button, styles);
+export default withStyles(Button, styles);

@@ -2,77 +2,82 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // import COLORS & SIZES
-import GALIO_COLORS from './colors';
-import GALIO_SIZES from './sizes';
+import JAYTECH_COLORS, { getThemeModeColors } from './colors';
+import JAYTECH_SIZES from './sizes';
 
 // default theme with COLORS & SIZES
-const GalioTheme = {
-  COLORS: GALIO_COLORS,
-  SIZES: GALIO_SIZES,
+const JaytechTheme = {
+  COLORS: JAYTECH_COLORS,
+  SIZES: JAYTECH_SIZES,
 };
 
-export default GalioTheme;
+export default JaytechTheme;
 
-// creating the GalioTheme context
-const GalioContext = React.createContext();
+// creating the JaytechTheme context
+const JaytechContext = React.createContext();
 
 /*
-*   withGalio
-*   args: Component - React Component, styles to be added to Component
-*   theme: if no styles or theme add default theme={ SIZES, COLORS }
-*/
+ *   withStyles
+ *   args: Component - React Component, styles to be added to Component
+ *   theme: if no styles or theme add default theme={ SIZES, COLORS }
+ */
 
-export function withGalio(Component, styles) {
+export function withStyles(Component, styles) {
   // eslint-disable-next-line react/no-multi-comp
   return class extends React.Component {
     render() {
       const { props } = this;
       return (
-        <GalioContext.Consumer>
+        <JaytechContext.Consumer>
           {theme => (
             <Component
               {...props}
-              theme={{ ...GalioTheme, ...theme }}
-              styles={styles && styles({ ...GalioTheme, ...theme })}
+              theme={{
+                ...JaytechTheme,
+                // , ...getThemeModeColors(theme.mode)
+                ...theme.theme,
+              }}
+              styles={styles && styles({ ...JaytechTheme, ...theme.theme })}
             />
           )}
-        </GalioContext.Consumer>
+        </JaytechContext.Consumer>
       );
     }
   };
 }
 
 /*
-*   GalioProvider using React.Component
-*   GalioContext.Provider value has the default value from { COLORS, SIZES }
-*/
+ *   JaytechProvider using React.Component
+ *   JaytechContext.Provider value has the default value from { COLORS, SIZES }
+ */
 
 // eslint-disable-next-line react/no-multi-comp
-export class GalioProvider extends React.Component {
+export class JaytechProvider extends React.Component {
   static defaultProps = {
     children: null,
     theme: {},
-  }
+    mode: 'light',
+  };
 
   render() {
-    const { theme, children } = this.props;
+    const { theme, children, mode } = this.props;
     const { COLORS: CUSTOM_COLORS, SIZES: CUSTOM_SIZES, customTheme } = theme;
 
     const providerTheme = {
-      COLORS: { ...GalioTheme.COLORS, ...CUSTOM_COLORS },
-      SIZES: { ...GalioTheme.SIZES, ...CUSTOM_SIZES },
-      ...customTheme
+      COLORS: { ...JaytechTheme.COLORS, ...getThemeModeColors(mode), ...CUSTOM_COLORS },
+      SIZES: { ...JaytechTheme.SIZES, ...CUSTOM_SIZES },
+      ...customTheme,
     };
 
     return (
-      <GalioContext.Provider value={providerTheme}>
+      <JaytechContext.Provider value={{ theme: providerTheme, mode }}>
         {children}
-      </GalioContext.Provider>
+      </JaytechContext.Provider>
     );
   }
 }
 
-GalioProvider.propTypes = {
+JaytechProvider.propTypes = {
   children: PropTypes.any,
   theme: PropTypes.any,
 };

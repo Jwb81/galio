@@ -1,4 +1,3 @@
-
 /* eslint-disable import/no-cycle */
 
 import Accordion from './Accordion';
@@ -16,12 +15,17 @@ import Switch from './Switch';
 import Text from './Text';
 import Toast from './Toast';
 
-import theme, { withGalio, GalioProvider } from './theme';
+import theme, { withStyles, JaytechProvider } from './theme';
 
 import galioConfig from './config/galio.json';
 
 const GalioFont = require('./fonts/galio.ttf');
 
+// HELPERS
+export * from './styles';
+export { default as iconTypes } from './helpers/iconTypes';
+
+// COMPONENTS
 export {
   Accordion,
   Block,
@@ -37,9 +41,11 @@ export {
   Text,
   Toast,
   Switch,
+
+  // theme stuff
   theme,
-  withGalio,
-  GalioProvider,
+  withStyles,
+  JaytechProvider,
   galioConfig,
   GalioFont,
 };

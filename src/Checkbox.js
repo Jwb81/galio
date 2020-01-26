@@ -4,7 +4,7 @@ import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import PropTypes from 'prop-types';
 // galio dependency
 import { Icon, Text } from './';
-import GalioTheme, { withGalio } from './theme';
+import JaytechTheme, { withStyles } from './theme';
 
 function Checkbox({
   checkboxStyle, 
@@ -164,7 +164,7 @@ Checkbox.defaultProps = {
   labelStyle: null,
   onChange: () => {},
   styles: {},
-  theme: GalioTheme,
+  theme: JaytechTheme,
 };
 
 Checkbox.propTypes = {
@@ -192,4 +192,4 @@ Checkbox.propTypes = {
   theme: PropTypes.any,
 };
 
-export default withGalio(Checkbox, styles);
+export default withStyles(Checkbox, styles);

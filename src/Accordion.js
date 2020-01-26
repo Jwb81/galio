@@ -1,33 +1,20 @@
-import React, { useState, useEffect } from "react";
-import {
-  Animated,
-  TouchableWithoutFeedback,
-  FlatList,
-  StyleSheet,
-  Dimensions
-} from "react-native";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import { Animated, TouchableWithoutFeedback, FlatList, StyleSheet, Dimensions } from 'react-native';
+import PropTypes from 'prop-types';
 
-import Block from "./Block";
-import Icon from "./Icon";
-import Text from "./Text";
-import GalioTheme from "./theme";
+import Block from './Block';
+import Icon from './Icon';
+import Text from './Text';
+import JaytechTheme from './theme';
 
-const { width } = Dimensions.get("screen");
+const { width } = Dimensions.get('screen');
 
-// 
+//
 function AccordionContent({ content, contentStyle }) {
   return <Text style={[styles.content, contentStyle]}>{content}</Text>;
 }
 
-function AccordionHeader({
-  expanded,
-  expandedIcon,
-  headerStyle,
-  icon,
-  title,
-  chapterIcon
-}) {
+function AccordionHeader({ expanded, expandedIcon, headerStyle, icon, title, chapterIcon }) {
   return (
     <Block row middle style={[{ padding: 6 }, headerStyle]}>
       {chapterIcon ? (
@@ -35,7 +22,7 @@ function AccordionHeader({
           name={chapterIcon.name}
           family={chapterIcon.family}
           size={chapterIcon.size || 14}
-          color={chapterIcon.color || GalioTheme.COLORS.PRIMARY}
+          color={chapterIcon.color || JaytechTheme.COLORS.PRIMARY}
           style={chapterIcon.style || { marginRight: 5 }}
         />
       ) : null}
@@ -47,7 +34,7 @@ function AccordionHeader({
                 name="keyboard-arrow-up"
                 family="material"
                 size={16}
-                color={GalioTheme.COLORS.MUTED}
+                color={JaytechTheme.COLORS.MUTED}
               />
             )
           : icon || (
@@ -55,7 +42,7 @@ function AccordionHeader({
                 name="keyboard-arrow-down"
                 family="material"
                 size={16}
-                color={GalioTheme.COLORS.MUTED}
+                color={JaytechTheme.COLORS.MUTED}
               />
             )}
       </Block>
@@ -70,15 +57,11 @@ function AccordionAnimation({ children, style }) {
     Animated.timing(fade, {
       toValue: 1,
       duration: 400,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
   });
 
-  return (
-    <Animated.View style={{ ...style, opacity: fade }}>
-      {children}
-    </Animated.View>
-  );
+  return <Animated.View style={{ ...style, opacity: fade }}>{children}</Animated.View>;
 }
 
 function AccordionItem({
@@ -91,7 +74,7 @@ function AccordionItem({
   item,
   onAccordionClose,
   onAccordionOpen,
-  setSelected
+  setSelected,
 }) {
   return (
     <Block>
@@ -100,8 +83,7 @@ function AccordionItem({
           onAccordionOpen && !expanded && onAccordionOpen(item, index);
           onAccordionClose && expanded && onAccordionClose(item, index);
           setSelected(index);
-        }}
-      >
+        }}>
         <Block>
           <AccordionHeader
             expanded={expanded}
@@ -115,10 +97,7 @@ function AccordionItem({
       </TouchableWithoutFeedback>
       {expanded ? (
         <AccordionAnimation>
-          <AccordionContent
-            content={item.content}
-            contentStyle={contentStyle}
-          />
+          <AccordionContent content={item.content} contentStyle={contentStyle} />
         </AccordionAnimation>
       ) : null}
     </Block>
@@ -136,7 +115,7 @@ function Accordion({
   onAccordionOpen,
   onAccordionClose,
   listStyle,
-  style
+  style,
 }) {
   const [selected, setSelected] = useState(opened);
 
@@ -182,8 +161,8 @@ Accordion.propTypes = {
 };
 
 Accordion.defaultProps = {
-  theme: GalioTheme,
-  opened: 0
+  theme: JaytechTheme,
+  opened: 0,
 };
 
 const styles = StyleSheet.create({
@@ -192,18 +171,18 @@ const styles = StyleSheet.create({
     width: width * 0.8,
     borderRadius: 16,
     padding: 8,
-    shadowColor: "black",
+    shadowColor: 'black',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   header: {
-    padding: 6
+    padding: 6,
   },
   content: {
-    padding: 10
-  }
+    padding: 10,
+  },
 });
 
 export default Accordion;

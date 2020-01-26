@@ -3,7 +3,7 @@ import { Dimensions, StyleSheet, Animated, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 // galio components
 import { Text } from '.';
-import GalioTheme, { withGalio } from './theme';
+import JaytechTheme, { withStyles } from './theme';
 
 const { height } = Dimensions.get('screen');
 
@@ -36,7 +36,7 @@ class Toast extends Component {
     style: null,
     textStyle: null,
     styles: {},
-    theme: GalioTheme,
+    theme: JaytechTheme,
   };
 
   state = {
@@ -168,4 +168,4 @@ const styles = theme =>
     },
   });
 
-export default withGalio(Toast, styles);
+export default withStyles(Toast, styles);

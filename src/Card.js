@@ -4,7 +4,7 @@ import { Image, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { Block, Icon, Text } from './';
-import GalioTheme, { withGalio } from './theme';
+import JaytechTheme, { withStyles } from './theme';
 
 function Card({
   avatar,
@@ -106,7 +106,7 @@ Card.defaultProps = {
   shadow: true,
   borderless: false,
   styles: {},
-  theme: GalioTheme,
+  theme: JaytechTheme,
   title: '',
   titleColor: '',
   caption: '',
@@ -169,4 +169,4 @@ const styles = theme =>
     },
   });
 
-export default withGalio(Card, styles);
+export default withStyles(Card, styles);

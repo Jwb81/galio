@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 import normalize from './helpers/normalize';
-import GalioTheme, { withGalio } from './theme';
+import JaytechTheme, { withStyles } from './theme';
 
 function Typography({
   style,
@@ -64,7 +64,7 @@ Typography.defaultProps = {
   bold: false,
   italic: false,
   styles: {},
-  theme: GalioTheme,
+  theme: JaytechTheme,
 };
 
 Typography.propTypes = {
@@ -85,4 +85,4 @@ Typography.propTypes = {
   theme: PropTypes.any,
 };
 
-export default withGalio(Typography);
+export default withStyles(Typography);

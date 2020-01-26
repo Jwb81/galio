@@ -68,7 +68,7 @@ Under Galio's belt:
 * Toast notification
 * Slider
 * Switch
-* GalioTheme
+* JaytechTheme
 
 ## Documentation
 
