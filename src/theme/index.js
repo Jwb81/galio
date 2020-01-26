@@ -29,15 +29,15 @@ export function withStyles(Component, styles) {
       const { props } = this;
       return (
         <JaytechContext.Consumer>
-          {theme => (
+          {({ theme, mode }) => (
             <Component
               {...props}
               theme={{
                 ...JaytechTheme,
                 // , ...getThemeModeColors(theme.mode)
-                ...theme.theme,
+                ...theme,
               }}
-              styles={styles && styles({ ...JaytechTheme, ...theme.theme })}
+              styles={styles && styles({ ...JaytechTheme, ...theme })}
             />
           )}
         </JaytechContext.Consumer>

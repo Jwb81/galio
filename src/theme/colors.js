@@ -415,7 +415,7 @@ const darkModeColors = {
 };
 
 export const getThemeModeColors = (mode = 'light') => {
-  switch (mode) {
+  switch (mode.toLowerCase()) {
     case 'light':
       return lightModeColors;
     case 'dark':
