@@ -1,51 +1,51 @@
 const flex = {
-  display: "flex"
+  display: 'flex',
 };
 
 const flexRow = {
-  display: "flex",
-  flexDirection: "row"
+  display: 'flex',
+  flexDirection: 'row',
 };
 const flexColumn = {
-  display: "flex",
-  flexDirection: "column"
+  display: 'flex',
+  flexDirection: 'column',
 };
 
-const start = "flex-start";
-const center = "center";
-const end = "flex-end";
-const around = "space-around";
-const between = "space-between";
-const baseline = "baseline";
-const stretch = "stretch";
-const auto = "auto";
+const start = 'flex-start';
+const center = 'center';
+const end = 'flex-end';
+const around = 'space-around';
+const between = 'space-between';
+const baseline = 'baseline';
+const stretch = 'stretch';
+const auto = 'auto';
 
 const flexDirections = [
-  { name: "row", value: flexRow },
-  { name: "column", value: flexColumn }
+  { name: 'row', value: flexRow },
+  { name: 'column', value: flexColumn },
 ];
 const justifyContentValues = [
-  { name: "Start", value: start },
-  { name: "Center", value: center },
-  { name: "End", value: end },
-  { name: "Between", value: between },
-  { name: "Around", value: around }
+  { name: 'Start', value: start },
+  { name: 'Center', value: center },
+  { name: 'End', value: end },
+  { name: 'Between', value: between },
+  { name: 'Around', value: around },
 ];
 const alignItemsValues = [
-  { name: "Start", value: start },
-  { name: "Center", value: center },
-  { name: "End", value: end },
-  { name: "Baseline", value: baseline },
-  { name: "Stretch", value: stretch }
+  { name: 'Start', value: start },
+  { name: 'Center', value: center },
+  { name: 'End', value: end },
+  { name: 'Baseline', value: baseline },
+  { name: 'Stretch', value: stretch },
 ];
 
 const alignSelfValues = [
-  { name: "Auto", value: auto },
-  { name: "Start", value: start },
-  { name: "Center", value: center },
-  { name: "End", value: end },
-  { name: "Baseline", value: baseline },
-  { name: "Stretch", value: stretch }
+  { name: 'Auto', value: auto },
+  { name: 'Start', value: start },
+  { name: 'Center', value: center },
+  { name: 'End', value: end },
+  { name: 'Baseline', value: baseline },
+  { name: 'Stretch', value: stretch },
 ];
 
 let flexLayouts = {};
@@ -56,16 +56,29 @@ flexDirections.forEach(dir => {
       flexLayouts[name] = {
         ...dir.value,
         justifyContent: justify.value,
-        alignItems: align.value
+        alignItems: align.value,
       };
     });
   });
 });
 
+justifyContentValues.forEach(justify => {
+  const name = `justify${justify.name}`;
+  flexLayouts[name] = {
+    justifyContent: justify.value,
+  };
+});
+alignItemsValues.forEach(align => {
+  const name = `align${align.name}`;
+  flexLayouts[name] = {
+    alignItems: align.value,
+  };
+});
+
 alignSelfValues.forEach(align => {
   const name = `alignSelf${align.name}`;
   flexLayouts[name] = {
-    alignSelf: align.value
+    alignSelf: align.value,
   };
 });
 
@@ -75,9 +88,7 @@ let flexSizes = {};
 );
 
 let flexGrow = {};
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(
-  grow => (flexGrow[`flexGrow${grow}`] = { flexGrow: grow })
-);
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(grow => (flexGrow[`flexGrow${grow}`] = { flexGrow: grow }));
 
 const stylesheet = {
   // BASICS
@@ -92,11 +103,11 @@ const stylesheet = {
 
   // OTHER FLEX
   flexWrap: {
-    flexWrap: "wrap"
+    flexWrap: 'wrap',
   },
 
   // FLEX STYLES
-  ...flexLayouts
+  ...flexLayouts,
 };
 
 module.exports = stylesheet;
