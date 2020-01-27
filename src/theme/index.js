@@ -65,7 +65,7 @@ export class JaytechProvider extends React.Component {
   };
 
   render() {
-    const { theme, children, mode } = this.props;
+    const { theme, children, mode, persistentStyles } = this.props;
     const { COLORS: CUSTOM_COLORS, SIZES: CUSTOM_SIZES, customTheme } = theme;
 
     const providerTheme = {

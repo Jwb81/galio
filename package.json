@@ -1,6 +1,6 @@
 {
   "name": "jaytech-rn-ui",
-  "version": "0.0.20",
+  "version": "0.0.22",
   "main": "./lib/index.js",
   "files": [
     "lib/"
