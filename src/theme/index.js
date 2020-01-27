@@ -29,21 +29,26 @@ export function withStyles(Component, styles) {
       const { props } = this;
       return (
         <JaytechContext.Consumer>
-          {({ theme, mode, persistentStyles }) => (
-            <Component
-              {...props}
-              theme={{
-                ...JaytechTheme,
-                // , ...getThemeModeColors(theme.mode)
-                ...theme,
-              }}
-              styles={Object.assign(
-                {},
-                typeof persistentStyles === 'function' ? persistentStyles(theme) : persistentStyles,
-                styles ? styles({ ...JaytechTheme, ...theme }) : {}
-              )}
-            />
-          )}
+          {({ theme, mode, persistentStyles }) => {
+            const computedPersistentStyles =
+              typeof persistentStyles === 'function' ? persistentStyles(theme) : persistentStyles;
+
+            const computedStyles = styles
+              ? styles({ ...JaytechTheme, ...theme }, computedPersistentStyles)
+              : {};
+
+            return (
+              <Component
+                {...props}
+                theme={{
+                  ...JaytechTheme,
+                  // , ...getThemeModeColors(theme.mode)
+                  ...theme,
+                }}
+                styles={Object.assign({}, computedPersistentStyles, computedStyles)}
+              />
+            );
+          }}
         </JaytechContext.Consumer>
       );
     }
