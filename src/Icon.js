@@ -6,7 +6,7 @@ import JaytechTheme, { withStyles } from './theme';
 import getIconType from './helpers/getIconType';
 
 import galioConfig from './config/galio.json';
-import galioExtraConfig from './config/galioExtra.json'
+import galioExtraConfig from './config/galioExtra.json';
 
 const Galio = createIconSetFromIcoMoon(galioConfig, 'Galio', './fonts/galio.ttf');
 const GalioExtra = createIconSetFromIcoMoon(
@@ -48,8 +48,9 @@ function Icon({ name, family, size, color, styles, theme, ...rest }) {
       return (
         <IconInstance
           name={name}
-          size={size || theme.SIZES.BASE}
-          color={color || theme.COLORS.BLACK}
+          size={size}
+          style={[styles.text]}
+          // color={color || theme.COLORS.BLACK}
           {...rest}
         />
       );
@@ -62,7 +63,7 @@ function Icon({ name, family, size, color, styles, theme, ...rest }) {
 Icon.defaultProps = {
   name: null,
   family: null,
-  size: null,
+  size: 24,
   color: null,
   styles: {},
   theme: JaytechTheme,
