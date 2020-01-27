@@ -29,7 +29,7 @@ export function withStyles(Component, styles) {
       const { props } = this;
       return (
         <JaytechContext.Consumer>
-          {({ theme, mode }) => (
+          {({ theme, mode, persistentStyles }) => (
             <Component
               {...props}
               theme={{
@@ -37,7 +37,11 @@ export function withStyles(Component, styles) {
                 // , ...getThemeModeColors(theme.mode)
                 ...theme,
               }}
-              styles={styles && styles({ ...JaytechTheme, ...theme })}
+              styles={Object.assign(
+                {},
+                typeof persistentStyles === 'function' ? persistentStyles(theme) : persistentStyles,
+                styles ? styles({ ...JaytechTheme, ...theme }) : {}
+              )}
             />
           )}
         </JaytechContext.Consumer>
@@ -57,6 +61,7 @@ export class JaytechProvider extends React.Component {
     children: null,
     theme: {},
     mode: 'light',
+    persistentStyles: () => ({}),
   };
 
   render() {
@@ -70,7 +75,7 @@ export class JaytechProvider extends React.Component {
     };
 
     return (
-      <JaytechContext.Provider value={{ theme: providerTheme, mode }}>
+      <JaytechContext.Provider value={{ theme: providerTheme, mode, persistentStyles }}>
         {children}
       </JaytechContext.Provider>
     );
