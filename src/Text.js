@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import normalize from './helpers/normalize';
 import JaytechTheme, { withStyles } from './theme';
+import { j } from './styles';
 
 function Typography({
   style,
@@ -28,6 +29,9 @@ function Typography({
   return (
     <Text
       style={[
+        // default styles
+        { fontSize: theme.SIZES.FONT, color: theme.COLORS.TEXT_BASIC },
+
         h1 && { fontSize: normalize(44) },
         h2 && { fontSize: normalize(38) },
         h3 && { fontSize: normalize(30) },

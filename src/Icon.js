@@ -19,7 +19,7 @@ const GalioExtra = createIconSetFromIcoMoon(
 // Galio Fonts have to loaded with Fonts.loadAsync if you're
 // using Expo (you can export GalioFont from index in order to import it)
 
-function Icon({ name, family, size, color, styles, theme, ...rest }) {
+function Icon({ name, family, size, color, style, styles, theme, ...rest }) {
   if (family === 'Galio') {
     if (name) {
       return (
@@ -27,6 +27,7 @@ function Icon({ name, family, size, color, styles, theme, ...rest }) {
           name={name}
           size={size || theme.SIZES.BASE}
           color={color || theme.COLORS.BLACK}
+          style={[style && style]}
           {...rest}
         />
       );
@@ -38,6 +39,7 @@ function Icon({ name, family, size, color, styles, theme, ...rest }) {
           name={name}
           size={size || theme.SIZES.BASE}
           color={color || theme.COLORS.BLACK}
+          style={[style && style]}
           {...rest}
         />
       );
@@ -49,8 +51,8 @@ function Icon({ name, family, size, color, styles, theme, ...rest }) {
         <IconInstance
           name={name}
           size={size}
-          style={[styles.text]}
-          // color={color || theme.COLORS.BLACK}
+          color={color || theme.COLORS.BLACK}
+          style={[style && style]}
           {...rest}
         />
       );

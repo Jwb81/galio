@@ -17,8 +17,8 @@ export default JaytechTheme;
 const JaytechContext = React.createContext();
 
 /*
- *   withStyles
- *   args: Component - React Component, styles to be added to Component
+ *   withStylesÎ
+ *   Component - React Component, styles to be added to Component
  *   theme: if no styles or theme add default theme={ SIZES, COLORS }
  */
 
@@ -30,9 +30,11 @@ export function withStyles(Component, styles) {
       return (
         <JaytechContext.Consumer>
           {({ theme, mode, persistentStyles }) => {
+            // persistent styles are user defined and injected into every component using this HOC
             const computedPersistentStyles =
               typeof persistentStyles === 'function' ? persistentStyles(theme) : persistentStyles;
 
+            // computed styles are usually the styles coming from a Stylesheet related to a specific component
             const computedStyles = styles
               ? styles({ ...JaytechTheme, ...theme }, computedPersistentStyles)
               : {};

@@ -374,11 +374,35 @@ export const SOCIAL = {
 
 export const THEME = {
   THEME: '#B23AFC',
-  PRIMARY: '#B23AFC',
-  INFO: '#1232FF',
-  ERROR: '#FE2472',
-  WARNING: '#FF9C09',
-  SUCCESS: '#45DF31',
+  
+  // from Galio
+  // PRIMARY: '#B23AFC',
+  // INFO: '#1232FF',
+  // ERROR: '#FE2472',
+  // WARNING: '#FF9C09',
+  // SUCCESS: '#45DF31',
+
+  // from Material Native Kit
+  DEFAULT: '#DCDCDC',
+  PRIMARY: '#9C26B0',
+  INFO: '#00BCD4',
+  ERROR: '#F44336',
+  WARNING: '#FF9800',
+  SUCCESS: '#4CAF50',
+  LABEL: '#FE2472',
+  MUTED: '#979797',
+  INPUT: '#DCDCDC',
+  ACTIVE: '#9C26B0',
+  BUTTON_COLOR: '#9C26B0',
+  PLACEHOLDER: '#9FA5AA',
+  SWITCH_ON: '#9C26B0',
+  SWITCH_OFF: '#D4D9DD',
+  GRADIENT_START: '#6B24AA',
+  GRADIENT_END: '#AC2688',
+  PRICE_COLOR: '#EAD5FB',
+  BORDER_COLOR: '#E7E7E7',
+  BLOCK: '#E7E7E7',
+  ICON: '#4A4A4A',
 };
 
 export const COMPONENTS = {
