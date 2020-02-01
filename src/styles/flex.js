@@ -83,12 +83,12 @@ alignSelfValues.forEach(align => {
 });
 
 let flexSizes = {};
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(
   flexSize => (flexSizes[`flex${flexSize}`] = { flex: flexSize })
 );
 
 let flexGrow = {};
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(grow => (flexGrow[`flexGrow${grow}`] = { flexGrow: grow }));
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(grow => (flexGrow[`flexGrow${grow}`] = { flexGrow: grow }));
 
 const stylesheet = {
   // BASICS

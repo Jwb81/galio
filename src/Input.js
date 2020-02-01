@@ -166,7 +166,7 @@ const styles = theme =>
       width: '100%',
     },
     inputText: {
-      color: theme.COLORS.INPUT,
+      color: theme.COLORS.INPUT_TEXT,
       fontSize: theme.SIZES.INPUT_TEXT,
       textDecorationColor: 'transparent',
       textShadowColor: 'transparent',

@@ -374,7 +374,7 @@ export const SOCIAL = {
 
 export const THEME = {
   THEME: '#B23AFC',
-  
+
   // from Galio
   // PRIMARY: '#B23AFC',
   // INFO: '#1232FF',
@@ -413,6 +413,10 @@ export const COMPONENTS = {
   ICON: '#000000',
 };
 
+const INPUTS = {
+  INPUT_TEXT: '#656565',
+};
+
 const COLORS = {
   WHITE: '#FFFFFF',
   BLACK: '#000000',
@@ -420,6 +424,7 @@ const COLORS = {
   MUTED: '#9FA5AA',
   TRANSPARENT: 'transparent',
   NEUTRAL: 'rgba(255,255,255, 0.65)',
+  ...INPUTS,   
   ...COMPONENTS,
   ...THEME,
   ...SOCIAL,

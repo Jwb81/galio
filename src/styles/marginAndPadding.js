@@ -9,7 +9,7 @@ const paddingRight = "paddingRight";
 const paddingBottom = "paddingBottom";
 const paddingLeft = "paddingLeft";
 
-const spaceBreakpoints = [5, 10, 15, 20, 25, 50, 100];
+const spaceBreakpoints = [0, 5, 10, 15, 20, 25, 50, 100];
 
 const marginDirections = [
   { label: "t", value: [marginTop] },
