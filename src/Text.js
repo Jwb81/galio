@@ -24,13 +24,14 @@ function Typography({
   children,
   styles,
   theme,
+  ignoreTheme,
   ...rest
 }) {
   return (
     <Text
       style={[
         // default styles
-        { fontSize: theme.SIZES.FONT, color: theme.COLORS.TEXT_BASIC },
+        { fontSize: theme.SIZES.FONT, color: ignoreTheme ? theme.COLORS.WHITE : theme.COLORS.TEXT_BASIC },
 
         h1 && { fontSize: normalize(44) },
         h2 && { fontSize: normalize(38) },
@@ -69,6 +70,7 @@ Typography.defaultProps = {
   italic: false,
   styles: {},
   theme: JaytechTheme,
+  ignoreTheme: false
 };
 
 Typography.propTypes = {
@@ -87,6 +89,7 @@ Typography.propTypes = {
   italic: PropTypes.bool,
   styles: PropTypes.any,
   theme: PropTypes.any,
+  ignoreTheme: PropTypes.bool
 };
 
 export default withStyles(Typography);

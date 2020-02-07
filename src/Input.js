@@ -178,6 +178,7 @@ const styles = theme =>
     },
     inputView: {
       flex: 1,
+      alignSelf: 'stretch'
     },
     inputIcon: {
       marginHorizontal: theme.SIZES.BASE,

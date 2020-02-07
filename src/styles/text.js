@@ -1,3 +1,36 @@
+const fontWeightVariants = ['100', '200', '300', '400', '500', '600', '700', '800', '900'];
+
+const fontWeights = {};
+fontWeightVariants.forEach(weight => {
+  fontWeights[`fontWeight${weight}`] = {
+    fontWeight: weight,
+  };
+});
+
+const textDecorationVariants = [
+  { label: 'None', value: 'none' },
+  { label: 'Underline', value: 'underline' },
+  { label: 'LineThrough', value: 'line-through' },
+  { label: 'UnderlineLineThrough', value: 'underline line-through' },
+];
+const textDecorations = {};
+textDecorationVariants.forEach(decoration => {
+  textDecorations[`textDecoration${decoration.label}`] = {
+    textDecoration: decoration.value,
+  };
+});
+
+const fontStyleVariants = [
+  { label: 'Normal', value: 'normal' },
+  { label: 'Italic', value: 'italic' },
+];
+const fontStyles = {};
+fontStyleVariants.forEach(style => {
+  fontStyles[`fontStyle${style.label}`] = {
+    fontStyle: style.value,
+  };
+});
+
 const stylesheet = {
   // TEXT
   textLeft: { textAlign: 'left' },
@@ -6,22 +39,22 @@ const stylesheet = {
   textJustify: { textAlign: 'justify' },
   textAuto: { textAlign: 'auto' },
 
-  textXs: {
-    fontSize: 10,
+  fontXs: {
+    fontSize: 12,
   },
-  textSm: {
-    fontSize: 14,
+  fontSm: {
+    fontSize: 16,
   },
-  textMd: {
-    fontSize: 18,
+  fontMd: {
+    fontSize: 20,
   },
-  textLg: {
-    fontSize: 22,
+  fontLg: {
+    fontSize: 24,
   },
-  textXl: {
-    fontSize: 26,
+  fontXl: {
+    fontSize: 28,
   },
-  textHeader: {
+  fontHeader: {
     fontSize: 40,
   },
 
@@ -30,22 +63,31 @@ const stylesheet = {
     // fontFamily: 'Avenir'
     // fontFamily: 'Optima'
   },
-  textBold: {
+  fontBold: {
     fontWeight: 'bold',
   },
-  textNote: {
+  fontNote: {
     color: '#777',
   },
-  textWhite: {
+  fontWhite: {
     color: 'white',
   },
-  textBlack: {
+  fontBlack: {
     color: 'black',
   },
   textFillCenter: {
     width: '100%',
     textAlign: 'center',
   },
+
+  // FONT WEIGHTS
+  ...fontWeights,
+
+  // TEXT DECORATIONS
+  ...textDecorations,
+
+  // FONT STYLES
+  ...fontStyles,
 };
 
 module.exports = stylesheet;

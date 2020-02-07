@@ -31,10 +31,11 @@ function Button({
   theme,
   textStyle,
   uppercase,
+  outline,
   ...rest
 }) {
   function renderContent() {
-    const textStyles = [styles.customText, textStyle];
+    const textStyles = [styles.customText, outline && { color }, textStyle];
 
     // workaround for textTransform not supported on Expo SDK 29.0.0 or 30.0.0
     // More info: https://docs.expo.io/versions/latest/sdk/index.html#sdk-version
@@ -70,6 +71,12 @@ function Button({
   }
 
   const colorStyle = styles[color];
+  const outlineStyle = styles[`${color}Outline`] || {
+    backgroundColor: 'transparent',
+    color,
+    borderColor: color,
+    borderWidth: 1,
+  };
 
   const buttonStyles = [
     styles.defaultButton,
@@ -77,6 +84,7 @@ function Button({
     color && !colorStyle && { backgroundColor: color }, // color set & no styles for that color
     color === 'transparent' || styles.androidShadow,
     color === 'transparent' && !shadowless && { borderWidth: 1, borderColor: theme.COLORS.WHITE },
+    outline && outlineStyle,
     size === 'large' ? { width: width * 0.9 } : { width: width * 0.5 },
     round && { borderRadius: theme.SIZES.BASE * 2 },
     onlyIcon && {
@@ -166,27 +174,72 @@ const styles = theme =>
       fontSize: theme.SIZES.FONT,
       color: theme.COLORS.WHITE,
     },
+
+    // PRIMARY
     primary: {
       backgroundColor: theme.COLORS.PRIMARY,
     },
+    primaryOutline: {
+      borderColor: theme.COLORS.PRIMARY,
+      borderWidth: 1,
+      color: theme.COLORS.PRIMARY,
+    },
+
+    // THEME
     theme: {
       backgroundColor: theme.COLORS.THEME,
     },
+    themeOutline: {
+      borderColor: theme.COLORS.THEME,
+      borderWidth: 1,
+      color: theme.COLORS.THEME,
+    },
+
+    // INFO
     info: {
       backgroundColor: theme.COLORS.INFO,
     },
+    infoOutline: {
+      borderColor: theme.COLORS.INFO,
+      borderWidth: 1,
+      color: theme.COLORS.INFO,
+    },
+
+    // ERROR
     error: {
       backgroundColor: theme.COLORS.ERROR,
     },
+    errorOutline: {
+      borderColor: theme.COLORS.ERROR,
+      borderWidth: 1,
+      color: theme.COLORS.ERROR,
+    },
+
+    // WARNING
     warning: {
       backgroundColor: theme.COLORS.WARNING,
     },
+    warningOutline: {
+      borderColor: theme.COLORS.WARNING,
+      borderWidth: 1,
+      color: theme.COLORS.WARNING,
+    },
+
+    // SUCCESS
     success: {
       backgroundColor: theme.COLORS.SUCCESS,
     },
+    successOutline: {
+      borderColor: theme.COLORS.SUCCESS,
+      borderWidth: 1,
+      color: theme.COLORS.SUCCESS,
+    },
+
+    // TRANSPARENT
     transparent: {
       backgroundColor: theme.COLORS.TRANSPARENT,
     },
+
     androidShadow: {
       elevation: theme.SIZES.ANDROID_ELEVATION,
     },
