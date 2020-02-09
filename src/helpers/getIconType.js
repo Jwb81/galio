@@ -19,10 +19,10 @@ import iconTypes from './iconTypes';
 
 const iconFamilyMap = {
   [iconTypes.ZOCIAL]: ZocialIcon,
-  [iconTypes.OCTICON]: OcticonIcon,
+  [iconTypes.OCTICONS]: OcticonIcon,
   [iconTypes.MATERIAL]: MaterialIcon,
   [iconTypes.MATERIAL_COMMUNITY]: MaterialCommunityIcon,
-  [iconTypes.IONICON]: Ionicon,
+  [iconTypes.IONICONS]: Ionicon,
   [iconTypes.FOUNDATION]: FoundationIcon,
   [iconTypes.EVIL]: EvilIcon,
   [iconTypes.ENTYPO]: EntypoIcon,

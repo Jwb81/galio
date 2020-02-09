@@ -15,6 +15,7 @@ import Text from './components/Text';
 import Toast from './components/Toast';
 import ScreenWrapper from './components/ScreenWrapper';
 import TopNavigation from './components/TopNavigation';
+import DynamicStatusBar from './components/DynamicStatusBar';
 
 // STYLES & THEME
 import { j, styles } from './styles';
@@ -44,6 +45,7 @@ export {
   Switch,
   ScreenWrapper,
   TopNavigation,
+  DynamicStatusBar,
   //
   // THEME
   JaytechTheme,
