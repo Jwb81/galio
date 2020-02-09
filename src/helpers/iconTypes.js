@@ -13,7 +13,7 @@ export default {
   ENTYPO: 'Entypo',
   FONT_AWESOME: 'FontAwesome',
   FONT_AWESOME_5: 'FontAwesome5Free-Solid',
-  SIMPLE_LINE_ICON: 'simple-line-icons',
+  SIMPLE_LINE_ICONS: 'simple-line-icons',
   FEATHER: 'Feather',
   ANT_DESIGN: 'anticon',
 

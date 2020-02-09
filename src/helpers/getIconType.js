@@ -28,7 +28,7 @@ const iconFamilyMap = {
   [iconTypes.ENTYPO]: EntypoIcon,
   [iconTypes.FONT_AWESOME]: FAIcon,
   [iconTypes.FONT_AWESOME_5]: FA5Icon,
-  [iconTypes.SIMPLE_LINE_ICON]: SimpleLineIcon,
+  [iconTypes.SIMPLE_LINE_ICONS]: SimpleLineIcon,
   [iconTypes.FEATHER]: FeatherIcon,
   [iconTypes.ANT_DESIGN]: AntIcon,
 };

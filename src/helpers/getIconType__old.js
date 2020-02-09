@@ -39,7 +39,7 @@ export default type => {
       return FAIcon;
     case [iconTypes.FONT_AWESOME_5]:
       return FA5Icon;
-    case [iconTypes.SIMPLE_LINE_ICON]:
+    case [iconTypes.SIMPLE_LINE_ICONS]:
       return SimpleLineIcon;
     case [iconTypes.FEATHER]:
       return FeatherIcon;

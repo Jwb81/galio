@@ -20,7 +20,7 @@ const icons = {
 };
 
 const TopNavigation = props => {
-  const { navigation, theme, themeMode, toggleTheme, styles, alignment, ...restProps } = props;
+  const { navigation, theme, themeMode, toggleThemeMode, styles, alignment, ...restProps } = props;
 
   const createNavAction = (iconInfo, onPress) => {
     return (
@@ -90,7 +90,7 @@ const TopNavigation = props => {
     let rControls = rightControls.slice();
     if (addThemeAction) {
       rControls.push(
-        createNavAction(themeMode === themeModes.LIGHT ? icons.SUN : icons.MOON, toggleTheme)
+        createNavAction(themeMode === themeModes.LIGHT ? icons.SUN : icons.MOON, toggleThemeMode)
       );
     }
 
