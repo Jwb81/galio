@@ -34,10 +34,10 @@ const iconFamilyMap = {
 };
 
 export default type => {
-  const lowerCaseType = type.toLowerCase();
+  // const lowerCaseType = type.toLowerCase();
 
   // return the icon family icon or default to Material Icons
-  return iconFamilyMap[lowerCaseType]
-    ? iconFamilyMap[lowerCaseType]
+  return iconFamilyMap[type]
+    ? iconFamilyMap[type]
     : iconFamilyMap[iconTypes.MATERIAL];
 };
