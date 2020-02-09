@@ -17,27 +17,35 @@ import AntIcon from 'react-native-vector-icons/AntDesign';
 
 import iconTypes from './iconTypes';
 
-const iconFamilyMap = {
-  [iconTypes.ZOCIAL]: ZocialIcon,
-  [iconTypes.OCTICON]: OcticonIcon,
-  [iconTypes.MATERIAL]: MaterialIcon,
-  [iconTypes.MATERIAL_COMMUNITY]: MaterialCommunityIcon,
-  [iconTypes.IONICON]: Ionicon,
-  [iconTypes.FOUNDATION]: FoundationIcon,
-  [iconTypes.EVIL]: EvilIcon,
-  [iconTypes.ENTYPO]: EntypoIcon,
-  [iconTypes.FONT_AWESOME]: FAIcon,
-  [iconTypes.FONT_AWESOME_5]: FA5Icon,
-  [iconTypes.SIMPLE_LINE_ICON]: SimpleLineIcon,
-  [iconTypes.FEATHER]: FeatherIcon,
-  [iconTypes.ANT_DESIGN]: AntIcon,
-};
-
 export default type => {
-  const lowerCaseType = type.toLowerCase();
-
-  // return the icon family icon or default to Material Icons
-  return iconFamilyMap[lowerCaseType]
-    ? iconFamilyMap[lowerCaseType]
-    : iconFamilyMap[iconTypes.MATERIAL];
+  switch (type.toLowerCase()) {
+    case [iconTypes.ZOCIAL]:
+      return ZocialIcon;
+    case [iconTypes.OCTICON]:
+      return OcticonIcon;
+    case [iconTypes.MATERIAL]:
+      return MaterialIcon;
+    case [iconTypes.MATERIAL_COMMUNITY]:
+      return MaterialCommunityIcon;
+    case [iconTypes.IONICON]:
+      return Ionicon;
+    case [iconTypes.FOUNDATION]:
+      return FoundationIcon;
+    case [iconTypes.EVIL]:
+      return EvilIcon;
+    case [iconTypes.ENTYPO]:
+      return EntypoIcon;
+    case [iconTypes.FONT_AWESOME]:
+      return FAIcon;
+    case [iconTypes.FONT_AWESOME_5]:
+      return FA5Icon;
+    case [iconTypes.SIMPLE_LINE_ICON]:
+      return SimpleLineIcon;
+    case [iconTypes.FEATHER]:
+      return FeatherIcon;
+    case [iconTypes.ANT_DESIGN]:
+      return AntIcon;
+    default:
+      return MaterialIcon;
+  }
 };
