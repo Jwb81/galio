@@ -2,8 +2,8 @@ import React from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 // G A L I O - D E P E N D E N C Y
-import { Text } from './';
-import JaytechTheme, { withStyles } from './theme';
+import Text from '../Text';
+import { withStyles, JaytechTheme } from '../../theme';
 
 function Radio({
   color,
@@ -37,7 +37,6 @@ function Radio({
 
   // R E N D E R - L A B E L
   function renderLabel() {
-
     const labelStyles = [
       styles.textStyles,
       disabled && styles.disabledLabel,
@@ -55,7 +54,6 @@ function Radio({
   function radioPressHandler() {
     setChecked(!checked);
   }
-
 
   const containerStyles = [styles.container, flexDirection && { flexDirection }, containerStyle];
 
@@ -132,7 +130,7 @@ Radio.defaultProps = {
   initialValue: false,
   label: null,
   labelStyle: null,
-  onChange: () => { },
+  onChange: () => {},
   styles: {},
   theme: JaytechTheme,
 };

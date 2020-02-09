@@ -2,17 +2,17 @@ import React from 'react';
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import PropTypes from 'prop-types';
 
-import JaytechTheme, { withStyles } from './theme';
-import getIconType from './helpers/getIconType';
+import { withStyles, JaytechTheme } from '../../theme';
+import { getIconType, iconTypes } from '../../helpers';
 
-import galioConfig from './config/galio.json';
-import galioExtraConfig from './config/galioExtra.json';
+import galioConfig from '../../config/galio.json';
+import galioExtraConfig from '../../config/galioExtra.json';
 
-const Galio = createIconSetFromIcoMoon(galioConfig, 'Galio', './fonts/galio.ttf');
+const Galio = createIconSetFromIcoMoon(galioConfig, 'Galio', '../../fonts/galio.ttf');
 const GalioExtra = createIconSetFromIcoMoon(
   galioExtraConfig,
   'GalioExtra',
-  './fonts/galioExtra.ttf'
+  '../../fonts/galioExtra.ttf'
 );
 
 // Galio Fonts have to be linked with 'react-native link' if you're using react-native-cli
@@ -20,7 +20,7 @@ const GalioExtra = createIconSetFromIcoMoon(
 // using Expo (you can export GalioFont from index in order to import it)
 
 function Icon({ name, family, size, color, style, styles, theme, ...rest }) {
-  if (family === 'Galio') {
+  if (family === iconTypes.GALIO) {
     if (name) {
       return (
         <Galio
@@ -32,7 +32,7 @@ function Icon({ name, family, size, color, style, styles, theme, ...rest }) {
         />
       );
     }
-  } else if (family === 'GalioExtra') {
+  } else if (family === iconTypes.GALIO_EXTRA) {
     if (name) {
       return (
         <GalioExtra

@@ -2,9 +2,8 @@ import React from 'react';
 import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 
-import normalize from './helpers/normalize';
-import JaytechTheme, { withStyles } from './theme';
-import { j } from './styles';
+import normalize from '../../helpers/normalize';
+import { withStyles, JaytechTheme } from '../../theme';
 
 function Typography({
   style,

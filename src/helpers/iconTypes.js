@@ -1,21 +1,19 @@
 export default {
-    ANT_DESIGN: 'antDesign',
-    ENTYPO: 'entypo',
-    EVIL_ICONS: 'evilicons',
-    FEATHER: 'feather',
-    FONT_AWESOME: 'font-awesome',
-    FONT_AWESOME_5: 'font-awesome-5',
-    // FONTISTO: 'Fontisto',
-    MATERIAL_COMMUNITY_ICONS: 'material-community',
-    MATERIAL_ICONS: 'material',
-    SIMPLE_LINE_ICONS: 'simple-line-icon',
-    GALIO: 'galio',
-    GALIO_EXTRA: 'GalioExtra',
-  
-    // UNTESTED
-    OCTICON: 'octicon',
-    FOUNDATION: 'foundation',
-    ZOCIAL: 'zocial',
-    IONICON: 'ionicon',
-  };
-  
+  ZOCIAL: 'zocial',
+  OCTICON: 'octicon',
+  MATERIAL: 'material',
+  MATERIAL_COMMUNITY: 'material-community',
+  IONICON: 'ionicon',
+  FOUNDATION: 'foundation',
+  EVIL: 'evilicons',
+  ENTYPO: 'entypo',
+  FONT_AWESOME: 'font-awesome',
+  FONT_AWESOME_5: 'font-awesome-5',
+  SIMPLE_LINE_ICON: 'simple-line-icon',
+  FEATHER: 'feather',
+  ANT_DESIGN: 'antDesign',
+
+  // FONTISTO: 'Fontisto',
+  GALIO: 'galio',
+  GALIO_EXTRA: 'GalioExtra',
+};

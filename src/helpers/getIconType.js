@@ -15,35 +15,69 @@ import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 
+import iconTypes from './iconTypes';
+
 export default type => {
   switch (type.toLowerCase()) {
-    case 'zocial':
+    case [iconTypes.ZOCIAL]:
       return ZocialIcon;
-    case 'octicon':
+    case [iconTypes.OCTICON]:
       return OcticonIcon;
-    case 'material':
+    case [iconTypes.MATERIAL]:
       return MaterialIcon;
-    case 'material-community':
+    case [iconTypes.MATERIAL_COMMUNITY]:
       return MaterialCommunityIcon;
-    case 'ionicon':
+    case [iconTypes.IONICON]:
       return Ionicon;
-    case 'foundation':
+    case [iconTypes.FOUNDATION]:
       return FoundationIcon;
-    case 'evilicons':
+    case [iconTypes.EVIL]:
       return EvilIcon;
-    case 'entypo':
+    case [iconTypes.ENTYPO]:
       return EntypoIcon;
-    case 'font-awesome':
+    case [iconTypes.FONT_AWESOME]:
       return FAIcon;
-    case 'font-awesome-5':
+    case [iconTypes.FONT_AWESOME_5]:
       return FA5Icon;
-    case 'simple-line-icon':
+    case [iconTypes.SIMPLE_LINE_ICON]:
       return SimpleLineIcon;
-    case 'feather':
+    case [iconTypes.FEATHER]:
       return FeatherIcon;
-    case 'antdesign':
+    case [iconTypes.ANT_DESIGN]:
       return AntIcon;
     default:
       return MaterialIcon;
   }
 };
+// export default type => {
+//   switch (type.toLowerCase()) {
+//     case 'zocial':
+//       return ZocialIcon;
+//     case 'octicon':
+//       return OcticonIcon;
+//     case 'material':
+//       return MaterialIcon;
+//     case 'material-community':
+//       return MaterialCommunityIcon;
+//     case 'ionicon':
+//       return Ionicon;
+//     case 'foundation':
+//       return FoundationIcon;
+//     case 'evilicons':
+//       return EvilIcon;
+//     case 'entypo':
+//       return EntypoIcon;
+//     case 'font-awesome':
+//       return FAIcon;
+//     case 'font-awesome-5':
+//       return FA5Icon;
+//     case 'simple-line-icon':
+//       return SimpleLineIcon;
+//     case 'feather':
+//       return FeatherIcon;
+//     case 'antdesign':
+//       return AntIcon;
+//     default:
+//       return MaterialIcon;
+//   }
+// };

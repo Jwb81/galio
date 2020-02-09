@@ -4,6 +4,13 @@ const borderRadii = [0, 1, 2, 3, 4, 5, 10, 15, 20, 25, 100];
 
 const borders = {};
 
+/**
+ * BORDER SIZES
+ * @returns {Object} = {
+ *    borderStyle: 'solid',
+ *    borderWidth: 2
+ * }
+ */
 borderWidths.forEach(width => {
   borderStyles.forEach(style => {
     borders[`border${style}${width}`] = {
@@ -13,6 +20,12 @@ borderWidths.forEach(width => {
   });
 });
 
+/**
+ * BORDER RADIUS
+ * @returns {Object} = {
+ *    borderRadius: 10
+ * }
+ */
 borderRadii.forEach(radius => {
   borders[`borderRadius${radius}`] = {
     borderRadius: radius,
@@ -20,6 +33,7 @@ borderRadii.forEach(radius => {
 });
 
 const stylesheet = {
+  // just for testing purposes (since we always use a 1px solid red border for testing layouts :)
   testBorder: {
     borderWidth: 1,
     borderColor: 'red',

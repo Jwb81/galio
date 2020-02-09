@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View, Animated, StyleSheet, PanResponder } from 'react-native';
 import PropTypes from 'prop-types';
-import JaytechTheme, { withStyles } from './theme';
+import { withStyles, JaytechTheme } from '../../theme';
 
 class Slider extends PureComponent {
   constructor(props) {

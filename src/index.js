@@ -1,33 +1,33 @@
+// COMPONENTS
+import Accordion from './components/Accordion';
+import Block from './components/Block';
+import Button from './components/Button';
+import Card from './components/Card';
+import Checkbox from './components/Checkbox';
+import DeckSwiper from './components/DeckSwiper';
+import Icon from './components/Icon';
+import Input from './components/Input';
+import NavBar from './components/NavBar';
+import Radio from './components/Radio';
+import Slider from './components/Slider';
+import Switch from './components/Switch';
+import Text from './components/Text';
+import Toast from './components/Toast';
+import ScreenWrapper from './components/ScreenWrapper';
+import TopNavigation from './components/TopNavigation';
 
-import Accordion from './Accordion';
-import Block from './Block';
-import Button from './Button';
-import Card from './Card';
-import Checkbox from './Checkbox';
-import DeckSwiper from './DeckSwiper';
-import Icon from './Icon';
-import Input from './Input';
-import NavBar from './NavBar';
-import Radio from './Radio';
-import Slider from './Slider';
-import Switch from './Switch';
-import Text from './Text';
-import Toast from './Toast';
+// STYLES & THEME
 import { j, styles } from './styles';
-
-import theme, { withStyles, JaytechProvider } from './theme';
+import { withStyles, useTheme, JaytechProvider, JaytechTheme, themeModes } from './theme';
 
 import galioConfig from './config/galio.json';
-
 const GalioFont = require('./fonts/galio.ttf');
 
 // HELPERS
-// export { default as iconTypes } from './helpers/iconTypes';
+import { getIconType, iconTypes, normalizeFont } from './helpers';
 
-// console.log(Block);
-
-// COMPONENTS
 export {
+  // COMPONENTS
   Accordion,
   Block,
   Button,
@@ -42,15 +42,25 @@ export {
   Text,
   Toast,
   Switch,
+  ScreenWrapper,
+  TopNavigation,
   //
-  // theme stuff
-  theme,
+  // THEME
+  JaytechTheme,
+  themeModes,
   withStyles,
+  useTheme,
   JaytechProvider,
   galioConfig,
   GalioFont,
   //
-  // styles
-  j,
+  // STYLES
+  j, // same as styles
   styles,
+  //
+  //
+  // HELPER FUNCTIONS
+  getIconType,
+  iconTypes,
+  normalizeFont,
 };

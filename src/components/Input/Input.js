@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import Icon from './Icon';
-import JaytechTheme, { withStyles } from './theme';
+import Icon from '../Icon';
+import Text from '../Text'
+import { withStyles, JaytechTheme } from '../../theme';
 
 function Input({
   style,

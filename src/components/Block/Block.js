@@ -1,31 +1,31 @@
 import React from 'react';
-import { View, StyleSheet, SafeAreaView } from 'react-native';
+import { View, StyleSheet, SafeAreaView, KeyboardAvoidingView } from 'react-native';
 import PropTypes from 'prop-types';
-import JaytechTheme, { withStyles } from './theme';
+import { withStyles, JaytechTheme } from '../../theme';
 
 function Block({
-    row,
-    flex,
-    center,
-    middle,
-    top,
-    bottom,
-    right,
-    left,
-    shadow,
-    space,
-    fluid,
-    height,
-    shadowColor,
-    card,
-    width,
-    safe,
-    children,
-    style,
-    styles,
-    ...rest
+  row,
+  flex,
+  center,
+  middle,
+  top,
+  bottom,
+  right,
+  left,
+  shadow,
+  space,
+  fluid,
+  height,
+  shadowColor,
+  card,
+  width,
+  safe,
+  children,
+  style,
+  styles,
+  avoidKeyboard,
+  ...rest
 }) {
-
   const styleBlock = [
     styles.block,
     row && styles.row,
@@ -46,6 +46,16 @@ function Block({
     style,
   ];
 
+  if (safe && avoidKeyboard) {
+    return (
+      <SafeAreaView>
+        <KeyboardAvoidingView style={styleBlock} {...rest}>
+          {children}
+        </KeyboardAvoidingView>
+      </SafeAreaView>
+    );
+  }
+
   if (safe) {
     return (
       <SafeAreaView style={styleBlock} {...rest}>
@@ -54,8 +64,16 @@ function Block({
     );
   }
 
+  if (avoidKeyboard) {
+    return (
+      <KeyboardAvoidingView style={styleBlock} {...rest}>
+        {children}
+      </KeyboardAvoidingView>
+    );
+  }
+
   return (
-    <View  style={styleBlock} {...rest}>
+    <View style={styleBlock} {...rest}>
       {children}
     </View>
   );
@@ -80,6 +98,7 @@ Block.defaultProps = {
   safe: false,
   styles: {},
   theme: JaytechTheme,
+  avoidKeyboard: false,
 };
 
 Block.propTypes = {
@@ -101,6 +120,7 @@ Block.propTypes = {
   safe: PropTypes.bool,
   styles: PropTypes.any,
   theme: PropTypes.any,
+  avoidKeyboard: PropTypes.bool,
 };
 
 const styles = theme =>

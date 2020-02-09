@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Animated, TouchableWithoutFeedback, FlatList, StyleSheet, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 
-import Block from './Block';
-import Icon from './Icon';
-import Text from './Text';
-import JaytechTheme from './theme';
+import Block from '../Block';
+import Icon from '../Icon';
+import Text from '../Text';
+import { JaytechTheme } from '../../theme';
 
 const { width } = Dimensions.get('screen');
 

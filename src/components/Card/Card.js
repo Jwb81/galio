@@ -3,29 +3,31 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { Block, Icon, Text } from './';
-import JaytechTheme, { withStyles } from './theme';
+import Block from '../Block';
+import Icon from '../Icon';
+import Text from '../Text';
+import { withStyles, JaytechTheme } from '../../theme';
 
 function Card({
   avatar,
-  borderless, 
-  caption, 
+  borderless,
+  caption,
   captionColor,
-  card, 
+  card,
   children,
   footerStyle,
   image,
   imageBlockStyle,
   imageStyle,
-  location, 
-  locationColor, 
+  location,
+  locationColor,
   shadow,
-  style, 
+  style,
   styles,
-  title, 
+  title,
   titleColor,
   theme,
-  ...props 
+  ...props
 }) {
   function renderImage() {
     if (!image) return null;
@@ -88,7 +90,6 @@ function Card({
       </Block>
     );
   }
-
 
   const styleCard = [borderless && { borderWidth: 0 }, style];
 

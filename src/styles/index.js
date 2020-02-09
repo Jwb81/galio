@@ -18,7 +18,9 @@ const mergedStyles = {
 
 // export const colors = defaultColors;
 // export const palette = colors;
-export const j = mergedStyles;
-export const styles = mergedStyles;
+const j = mergedStyles;
+const styles = mergedStyles;
+
+export { j, styles };
 
 // export default mergedStyles;

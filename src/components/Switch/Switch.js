@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch as Switcher } from 'react-native';
 import PropTypes from 'prop-types';
-import JaytechTheme, { withStyles } from './theme';
+import { withStyles, JaytechTheme } from '../../theme';
 
 function Switch({
   initialValue,
@@ -56,7 +56,7 @@ Switch.propTypes = {
   ]),
   disabled: PropTypes.bool,
   initialValue: PropTypes.bool,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
 };
 
 export default withStyles(Switch);
