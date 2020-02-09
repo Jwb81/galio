@@ -16,6 +16,9 @@ import Toast from './components/Toast';
 import ScreenWrapper from './components/ScreenWrapper';
 import TopNavigation from './components/TopNavigation';
 import DynamicStatusBar from './components/DynamicStatusBar';
+import TabBar from './components/TabBar';
+import TabBarIcon from './components/TabBarIcon';
+import TabBarLabel from './components/TabBarLabel';
 
 // STYLES & THEME
 import { j, styles } from './styles';
@@ -46,6 +49,9 @@ export {
   ScreenWrapper,
   TopNavigation,
   DynamicStatusBar,
+  TabBar,
+  TabBarIcon,
+  TabBarLabel,
   //
   // THEME
   JaytechTheme,

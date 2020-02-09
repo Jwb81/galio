@@ -2,8 +2,9 @@ import React from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from '../Icon';
-import Text from '../Text'
+import Text from '../Text';
 import { withStyles, JaytechTheme } from '../../theme';
+import { iconTypes } from '../../helpers';
 
 function Input({
   style,
@@ -44,7 +45,6 @@ function Input({
     style,
   ];
 
-
   const inputStyles = [
     styles.inputView,
     borderless && icon && styles.inputIcon,
@@ -61,8 +61,8 @@ function Input({
       color={iconColor || placeholderTextColor || theme.COLORS.PLACEHOLDER}
     />
   ) : (
-      iconContent
-    );
+    iconContent
+  );
 
   const viewPassElement = password && viewPass && (
     <TouchableOpacity style={{ marginLeft: 2 }} onPress={() => setIsPassword(!isPassword)}>
@@ -70,7 +70,7 @@ function Input({
         size={iconSize || theme.SIZES.BASE * 1.0625}
         color={iconColor || theme.COLORS.BLACK}
         name="eye"
-        family="entypo"
+        family={iconTypes.ENTYPO}
       />
     </TouchableOpacity>
   );
@@ -179,7 +179,7 @@ const styles = theme =>
     },
     inputView: {
       flex: 1,
-      alignSelf: 'stretch'
+      alignSelf: 'stretch',
     },
     inputIcon: {
       marginHorizontal: theme.SIZES.BASE,
