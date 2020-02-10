@@ -13,8 +13,8 @@ const borders = {};
  */
 borderWidths.forEach(width => {
   borderStyles.forEach(style => {
-    borders[`border${style}${width}`] = {
-      borderStyle: style.slice(0, 1).toUpperCase() + style.slice(1),
+    borders[`border${style.slice(0, 1).toUpperCase() + style.slice(1)}${width}`] = {
+      borderStyle: style,
       borderWidth: width,
     };
   });
