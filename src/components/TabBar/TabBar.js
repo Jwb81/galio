@@ -4,8 +4,8 @@ import { withStyles } from '../../theme';
 import { BottomTabBar } from 'react-navigation-tabs';
 
 const TabBar = props => {
-  const { theme, style, styles, navigation, ...rest } = props;
-  return <BottomTabBar {...props} style={[styles.background]} {...rest} />;
+  const { style, styles, ...rest } = props;
+  return <BottomTabBar {...props} style={[styles.background, style]} {...rest} />;
 };
 
 export default withStyles(TabBar, scopedStyles);

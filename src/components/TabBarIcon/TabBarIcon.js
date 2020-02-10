@@ -4,12 +4,12 @@ import { j } from '../../styles';
 import Icon from '../Icon';
 import scopedStyles from './TabBarIcon.styles';
 
-const TabBarIcon = ({ theme, styles, style, name, family, focused }) => {
+const TabBarIcon = ({ theme, styles, style, name, family, focused, horizontal }) => {
   return (
     <Icon
       name={name}
       family={family}
-      style={[j.mt5, style]}
+      style={[horizontal ? j.mt20 : j.mt5, style]}
       color={focused ? theme.COLORS.INFO : theme.COLORS.TEXT_BASIC}
       size={focused ? 24 : 20}
       //

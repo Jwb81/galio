@@ -5,7 +5,15 @@ import PropTypes from 'prop-types';
 import { withNavigation } from 'react-navigation';
 import { withStyles, themeModes } from '../../theme';
 
-const DynamicStatusBar = ({ theme, themeMode, styles, hidden, barStyleOverride, translucent }) => {
+const DynamicStatusBar = ({
+  theme,
+  themeMode,
+  styles,
+  style,
+  hidden,
+  barStyleOverride,
+  translucent,
+}) => {
   const getStatusBarContent = () => {
     if (themeMode === themeModes.LIGHT) {
       return 'dark-content';
@@ -14,11 +22,11 @@ const DynamicStatusBar = ({ theme, themeMode, styles, hidden, barStyleOverride, 
     }
   };
 
-//   const androidStatusBarBgColor = styles.container.backgroundColor;
+  //   const androidStatusBarBgColor = styles.container.backgroundColor;
   const barStyle = getStatusBarContent();
 
   return (
-    <View style={[styles.background, styles.text]}>
+    <View style={[styles.background, styles.text, styles.dynamicStatusBar, style]}>
       <StatusBar
         // backgroundColor={androidStatusBarBgColor}
         barStyle={barStyleOverride ? barStyleOverride : barStyle}

@@ -1,5 +1,5 @@
 const borderWidths = [0, 1, 2, 3, 4, 5];
-const borderStyles = ['Solid', 'Dotted', 'Dashed'];
+const borderStyles = ['solid', 'dotted', 'dashed'];
 const borderRadii = [0, 1, 2, 3, 4, 5, 10, 15, 20, 25, 100];
 
 const borders = {};
@@ -14,7 +14,7 @@ const borders = {};
 borderWidths.forEach(width => {
   borderStyles.forEach(style => {
     borders[`border${style}${width}`] = {
-      borderStyle: style,
+      borderStyle: style.slice(0, 1).toUpperCase() + style.slice(1),
       borderWidth: width,
     };
   });
