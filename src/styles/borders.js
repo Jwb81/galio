@@ -10,6 +10,7 @@ const borders = {};
  *    borderStyle: 'solid',
  *    borderWidth: 2
  * }
+ * @example j.borderSolid5  --- solid border w/ width of 5px
  */
 borderWidths.forEach(width => {
   borderStyles.forEach(style => {
@@ -25,6 +26,7 @@ borderWidths.forEach(width => {
  * @returns {Object} = {
  *    borderRadius: 10
  * }
+ * @example j.borderRadius5
  */
 borderRadii.forEach(radius => {
   borders[`borderRadius${radius}`] = {
@@ -37,6 +39,16 @@ const stylesheet = {
   testBorder: {
     borderWidth: 1,
     borderColor: 'red',
+    borderStyle: 'solid',
+  },
+  testBorderBlue: {
+    borderWidth: 1,
+    borderColor: 'blue',
+    borderStyle: 'solid',
+  },
+  testBorderGreen: {
+    borderWidth: 1,
+    borderColor: 'green',
     borderStyle: 'solid',
   },
 

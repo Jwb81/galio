@@ -8,6 +8,7 @@ import { iconTypes } from '../../helpers';
 
 function Input({
   style,
+  inputStyle,
   type,
   placeholderTextColor,
   label,
@@ -50,6 +51,7 @@ function Input({
     borderless && icon && styles.inputIcon,
     styles.inputText,
     color && { color },
+    inputStyle && inputStyle
   ];
 
   const iconInstance = icon ? (
